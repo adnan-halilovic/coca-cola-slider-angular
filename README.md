@@ -1,4 +1,8 @@
-# CocaColaSlider
+# Coca Cola Slider - Angular
+
+The project has been created as a slider that you can reuse in your projects.
+
+The project is written in Angular and uses the Coca Cola design, that can bee seen on the official page's shop at the time of creating this project. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 

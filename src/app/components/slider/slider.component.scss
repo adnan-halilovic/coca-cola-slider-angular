@@ -1,0 +1,119 @@
+$transitionDuration: 0.5s;
+
+.slider {
+  width: 100%;
+  height: 540px;
+  max-width: 1440px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  .slide {
+    width: 247px;
+    // If you would like to have dynamic images width uncomment the following two lines
+    // width: 20%;
+    // background-size: cover;
+    position: relative;
+    height: inherit;
+    transition: all ease-in-out $transitionDuration;
+
+
+
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: inherit;
+      .content {
+        padding: 35px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .logo {
+          max-width: 175px;
+          z-index: 2;
+        }
+        .title {
+          font-weight: 600;
+          margin: 0px;
+          font-size: 2rem;
+          z-index: 2;
+        }
+        .description {
+          font-weight: 400;
+          display: none;
+        }
+
+        .cta {
+          border-radius: 30px;
+          background-color: red;
+          color: #fff;
+          text-decoration: none;
+          padding: 10px 40px;
+          font-size: 12px;
+          font-weight: 600;
+          display: none;
+          z-index: 2;
+          &:hover {
+            cursor: pointer;
+            background-color: lighten($color: red, $amount: 20);
+          }
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(#000, 0.5);
+          z-index: 1;
+          opacity: 1;
+          transition: opacity ease-in-out $transitionDuration;
+        }
+      }
+    }
+    &:not(.active) {
+      .title {
+        color: #fff;
+      }
+    }
+
+    &.active {
+      width: 946px;
+      // If you would like to have dynamic images width uncomment the following line
+      // width: 60%;
+
+      .content-wrapper {
+        .content {
+          display: block;
+
+          .logo {
+            position: inherit;
+          }
+          .title {
+            position: relative;
+            font-size: 2.6rem;
+          }
+
+          .description {
+            display: block;
+          }
+
+          .cta {
+            display: inline-block;
+            z-index: 2;
+          }
+          .overlay {
+            transition: opacity ease-in-out $transitionDuration;
+            opacity: 0;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+}

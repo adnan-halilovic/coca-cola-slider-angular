@@ -1,0 +1,19 @@
+<div class="slider">
+  <div
+    *ngFor="let slide of slides; let i = index"
+    class="slide"
+    [style.background-image]="activeSlideIndex === i ? slide.backgroundExpanded : slide.backgroundCollapsed"
+    [ngClass]="{'active' : activeSlideIndex === i}"
+    (click)="activeSlideIndex = i"
+  >
+    <div class="content-wrapper">
+      <div class="content" [style.color]="slide.textColor">
+        <img *ngIf="slide.logo" [src]="slide.logo" [alt]="slide.title" class="logo" />
+        <h2 *ngIf="slide.title"  class="title">{{ slide.title }}</h2>
+        <p class="description">{{ slide.description }}</p>
+        <a [href]="slide.ctaLink" class="cta">{{ slide.ctaText }}</a>
+        <div class="overlay"></div>
+      </div>
+    </div>
+  </div>
+</div>
